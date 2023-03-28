@@ -1,0 +1,128 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat de Exemplo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="chat-screen">
+    <header>
+      <h2>Atendimento on-line</h2>
+    </header>
+    <div id="messages-list">
+      <div class="item1">
+        <div class="user"><strong>Atendente diz:</strong></div>
+        <div class="chat">Olá Virtu</div>
+      </div>
+      <div class="item1">
+        <div class="user"><strong>Atendente diz:</strong></div>
+        <div class="chat">Tudo bem?</div>
+      </div>
+      <br>
+      <div class="item2">
+        <div class="user3"><strong>Você diz:</strong></div>
+        <div class="chat">sim</div>
+      </div>
+      <div class="item2">
+        <div class="user"><strong>Você diz:</strong></div>
+        <div class="chat">como posso ajudar</div>
+      </div>
+      <br>
+      <div class="item1">
+        <div class="user"><strong>Atendente diz:</strong></div>
+        <div class="chat">quero ajuda nao?</div>
+      </div>
+      <div class="item1">
+        <div class="user"><strong>Atendente diz:</strong></div>
+        <div class="chat">tmj </div>
+      </div>
+      <br>
+      <div class="item2">
+        <div class="user"><strong>User diz:</strong></div>
+        <div class="chat">quero ajuda nao?</div>
+      </div>
+      <div class="item2">
+        <div class="user"><strong>User diz:</strong></div>
+        <div class="chat">tmj </div>
+      </div>
+      <br>
+      <div class="item1">
+        <div class="user"><strong>Atendente diz:</strong></div>
+        <div class="chat">quero ajuda nao?</div>
+      </div>
+      <div class="item1">
+        <div class="user"><strong>Atendente diz:</strong></div>
+        <div class="chat">tmj </div>
+      </div>
+      <br>
+      <div class="item2">
+        <div class="user"><strong>User diz:</strong></div>
+        <div class="chat">quero ajuda nao?</div>
+      </div>
+      <div class="item2">
+        <div class="user"><strong>User diz:</strong></div>
+        <div class="chat">tmj </div>
+      </div>
+      <br>
+      <div class="item1">
+        <div class="user"><strong>Atendente diz:</strong></div>
+        <div class="chat">quero ajuda nao?</div>
+      </div>
+      <div class="item1">
+        <div class="user"><strong>Atendente diz:</strong></div>
+        <div class="chat">tmj </div>
+      </div>
+      <br>
+    </div>
+    <form id="form-chat-send" action="index.html" method="post">
+      <input type="text" id="message" name="message" placeholder="Digite a Mensage" value="">
+      <button id="envia" type="submit">Fazer Envio
+      </button>
+    </form>
+  </div>
+  <script>
+    function posicionaFim() {
+      const scrollChat = document.querySelector("#messages-list");
+      scrollChat.scrollTop = scrollChat.scrollHeight;
+    }
+
+    posicionaFim();
+
+    function adicionaMenssagem(textoMenssage) {
+      const novaMsg = document.createElement("div");
+      novaMsg.innerHTML = `<div class="item2">
+                            <div class="user"><strong>User diz:</strong></div>
+                            <div class="chat">${textoMenssage}</div>
+                          </div>`;
+
+      const menssagens = document.querySelector("#messages-list");
+      menssagens.appendChild(novaMsg);
+
+      posicionaFim();
+    }
+
+    function submitAdicionar(event) {
+      event.preventDefault();
+
+      const inputMsg = document.querySelector("#message");
+
+      if (inputMsg.value === "") {
+        alert("Insira uma menssagem valida!");
+        return;
+      }
+
+      adicionaMenssagem(inputMsg.value);
+
+      inputMsg.value = "";
+    }
+
+    const formAdd = document.querySelector("#form-chat-send");
+    formAdd.addEventListener("submit", submitAdicionar);
+
+  </script>
+</body>
+
+</html>

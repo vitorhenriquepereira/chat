@@ -1,0 +1,116 @@
+body {
+    padding: 0;
+    margin: 20;
+    background-color: rgb(69, 77, 107);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: rgb(30, 30, 30);
+}
+
+header {
+    margin: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    text-align: center;
+    background: rgb(255,255,255);
+}
+
+#title {
+    max-width: 300px;
+}
+
+#chat-screen {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    background-color: white;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 5px 5px 15px rgb(149, 149, 149);
+}
+
+#messages-list {
+    max-height: 500px;
+    overflow-y: scroll;
+    margin-right: 3px;
+}
+
+.chat {
+    background-color: white;
+}
+
+.item1 {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.item1 .chat {
+    align-self: flex-start;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    padding: 4px;
+    max-width: 250px;
+    word-break: break-word;
+}
+
+.item2 {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.item2 .chat {
+    align-self: flex-end;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    padding: 4px;
+    max-width: 250px;
+    word-break: break-word;
+}
+
+form {
+    margin: 5px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    align-items: center;
+}
+
+#form-chat-send {
+    align-items: center;
+}
+
+#message {
+    width: 70%;
+}
+
+#envia {
+    background-color: rgb(69, 77, 107);
+    border: 2px solid rgb(69, 77, 107);
+    color: white;
+    border-radius: 3px;
+    width: 28.6%;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(90, 90, 90);
+    border-radius: 10px;
+}
